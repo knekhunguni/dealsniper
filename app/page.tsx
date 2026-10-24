@@ -56,7 +56,12 @@ export default async function Home() {
                 )}
                 <div className="p-4">
                   <h2 className="text-xl font-semibold text-gray-900">{product.name}</h2>
-                  <p className="text-2xl font-bold text-green-600 mt-2">${product.price.toFixed(2)}</p>
+                  <p className="text-2xl font-bold text-green-600 mt-2">
+  {new Intl.NumberFormat('en-ZA', {
+    style: 'currency',
+    currency: 'ZAR'
+  }).format(product.price)}
+</p>
                   <p className="text-sm text-gray-500">{product.category}</p>
                   
                   <div className="mt-4">
